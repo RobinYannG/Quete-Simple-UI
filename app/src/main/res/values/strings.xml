@@ -5,5 +5,7 @@
     <string name="enter_surname">Prénom</string>
     <string name="enter_name">Nom</string>
     <string name="Button">Valider</string>
+    <string name="Toast">Tu dois renseigner le nom et le prénom !</string>
+    <string name="Felicitation">Félicitations </string>
 
 </resources>
