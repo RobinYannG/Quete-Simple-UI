@@ -6,6 +6,6 @@
     <string name="enter_name">Nom</string>
     <string name="Button">Valider</string>
     <string name="Toast">Tu dois renseigner le nom et le prénom !</string>
-    <string name="Felicitation">Félicitations </string>
+    <string name="Felicitations">Félicitations</string>
 
 </resources>

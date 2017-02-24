@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
                 }
                 else {
                     textView2.setVisibility(View.VISIBLE);
-                    textView2.setText(getString(R.string.Felicitation) + editText.getText() + " " + editText3.getText());
+                    textView2.setText(getString(R.string.Felicitation) + " " + editText.getText() + " " + editText3.getText());
                 }
             }
         });
