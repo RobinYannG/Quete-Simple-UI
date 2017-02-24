@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Quete simple UI</string>
+    <string name="TextView1">Welcome to the Wild Code School!</string>
+    <string name="CheckBox">Oui je souhaite devenir un wilder</string>
     <string name="enter_surname">Prénom</string>
     <string name="enter_name">Nom</string>
+    <string name="Button">Valider</string>
 
 </resources>

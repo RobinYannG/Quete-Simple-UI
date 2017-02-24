@@ -4,13 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import static fr.wcs.quetesimpleui.R.id.checkBox;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity {
 
-    private Button button;
 
 
     @Override
@@ -18,17 +20,45 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.button) ;
-        button.setOnClickListener(this) ;
+        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
+        final EditText editText = (EditText) findViewById(R.id.editText);
+        final EditText editText3 = (EditText) findViewById(R.id.editText3);
+        final Button button = (Button) findViewById(R.id.button);
+        final TextView textView2 = (TextView) findViewById(R.id.textView2);
+
+
+        editText.setEnabled(false);
+        editText3.setEnabled(false);
+        button.setEnabled(false);
+        textView2.setVisibility(View.INVISIBLE);
+
+
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editText.setEnabled(checkBox.isChecked());
+                editText3.setEnabled(checkBox.isChecked());
+                button.setEnabled(checkBox.isChecked());
+            }
+
+        });
+
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if (editText.length() == 0 || editText3.length() ==0){
+                    Toast.makeText(MainActivity.this, "Tu dois renseigner le nom et le prénom ! ",
+                            Toast.LENGTH_LONG).show();
+                    textView2.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    textView2.setVisibility(View.VISIBLE);
+                    textView2.setText("Félicitations " + editText.getText() + " " + editText3.getText());
+                }
+
+
+            }
+        });
+
+
     }
 
-
-    
-    public void onClick(View v) {
-        if (v == button) {
-            Toast.makeText(MainActivity.this, "Félicitations ",
-                    Toast.LENGTH_LONG).show();
-        }
-
-    }
 }
